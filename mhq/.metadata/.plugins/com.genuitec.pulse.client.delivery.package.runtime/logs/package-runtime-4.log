@@ -1,0 +1,12 @@
+一月 09, 2017 3:41:49 下午 com.genuitec.pulse.client.deliverypackage.runtime.internal.Activator initializeLoggers
+信息: Package starting up at Mon Jan 09 15:41:49 CST 2017
+一月 09, 2017 3:41:50 下午 com.genuitec.pulse.client.deliverypackage.runtime.UpdatesService checkForWorkspaceUpdates
+信息: Latest version of package has already been enabled in the workspace; check finished in 33ms
+一月 09, 2017 3:48:18 下午 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+信息: Loading XML bean definitions from file [C:/Users/mhq/Downloads/spring-web/src/main/webapp/WEB-INF/example-servlet.xml]
+一月 09, 2017 3:48:19 下午 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+信息: Loading XML bean definitions from file [C:/Users/mhq/Downloads/spring-web/src/main/resources/application-context.xml]
+一月 09, 2017 4:12:59 下午 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+信息: Loading XML bean definitions from file [C:/Users/mhq/Downloads/spring-web/src/main/resources/application-context.xml]
+一月 09, 2017 4:12:59 下午 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+信息: Loading XML bean definitions from file [C:/Users/mhq/Downloads/spring-web/src/main/webapp/WEB-INF/example-servlet.xml]
