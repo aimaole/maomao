@@ -1,7 +1,0 @@
-JDK_INSTALLATION_NAME=jdk1.7.0_45
-OPT_VM_ARGS=-Xmx2048M -Xms256M -XX\:MaxPermSize\=2048M
-SERVER_ENABLEMENT=true
-TOMCAT_BASE=E\:\\apache-tomcat-7.0.57
-TOMCAT_HOME=E\:\\apache-tomcat-7.0.57
-TOMCAT_TEMP=E\:\\apache-tomcat-7.0.57\\temp
-eclipse.preferences.version=1

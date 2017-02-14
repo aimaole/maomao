@@ -1,5 +1,0 @@
-INDEX VERSION 1.126
-E:\mhq\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\73969408.index
-\mhqxm\src
-E:\mhq\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\476061860.index
-\mhqxm Maven Webapp
