@@ -22,14 +22,9 @@
 	</section>
 	<section name="org.eclipse.m2e.core.pom.dependencies">
 	</section>
-	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
-		<item value="450" key="height"/>
-		<item value="480" key="width"/>
-		<item value="130" key="y"/>
-		<item value="560" key="x"/>
-	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="E:\maomao\mhq\maomao-parent"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -39,15 +34,21 @@
 			<item value="[groupId].[artifactId]-[version]"/>
 		</list>
 	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item value="450" key="height"/>
+		<item value="480" key="width"/>
+		<item value="130" key="y"/>
+		<item value="560" key="x"/>
+	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="groupId">
 			<item value="com.maomao"/>
 		</list>
 		<list key="package">
-			<item value="com.maomao.mhqxm"/>
+			<item value="org.maomao.manager.web"/>
 		</list>
 		<list key="artifactId">
-			<item value="mhqxm"/>
+			<item value="maomao-manager-web"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -58,6 +59,21 @@
 		</list>
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenModuleWizardParentPage">
+		<list key="moduleName">
+			<item value="maomao-manager-web"/>
+			<item value="maomao-manager-service"/>
+			<item value="maomao-manager-mapper"/>
+			<item value="maomao-manager-pojo"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
 		</list>
 	</section>
 	<section name="MavenProjectImportWizardPage">
@@ -74,10 +90,18 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.maomao"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="maomao-manager-web"/>
+			<item value="maomao-manager"/>
+			<item value="maomao-manager-service"/>
+			<item value="maomao-manager-mapper"/>
+			<item value="maomao-manager-pojo"/>
+			<item value="maomao-parent"/>
+			<item value="maomao-common"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
