@@ -6,7 +6,11 @@
 
     <groupId>com.maomao</groupId>
     <artifactId>spark-test</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>JSqlParser-test</module>
+    </modules>
     <properties>
         <spark.version>2.2.0</spark.version>
         <scala.version>2.11</scala.version>
