@@ -10,8 +10,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="JSqlParsertest" target="1.8" />
-      <module name="spark-test" target="1.8" />
+      <module name="JSqlParsertest" target="1.5" />
+      <module name="spark-test" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
