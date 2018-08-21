@@ -16,7 +16,7 @@ public class ReadXMLByDom4j {
     private List<Book> bookList = null;
     private Book book = null;
 
-    public List<Book> getBooks(File file){
+    public List<Book> getBooks(File file) {
 
         SAXReader reader = new SAXReader();
         try {
@@ -25,53 +25,45 @@ public class ReadXMLByDom4j {
             Iterator storeit = bookstore.elementIterator();
 
             bookList = new ArrayList<Book>();
-            while(storeit.hasNext()){
+            while (storeit.hasNext()) {
 
                 book = new Book();
                 Element bookElement = (Element) storeit.next();
                 //遍历bookElement的属性
                 List<Attribute> attributes = bookElement.attributes();
-                for(Attribute attribute : attributes){
-                    if(attribute.getName().equals("id")){
+                for (Attribute attribute : attributes) {
+                    if (attribute.getName().equals("id")) {
                         String id = attribute.getValue();//System.out.println(id);
                         book.setId(Integer.parseInt(id));
                     }
                 }
 
                 Iterator bookit = bookElement.elementIterator();
-                while(bookit.hasNext()){
+                while (bookit.hasNext()) {
                     Element child = (Element) bookit.next();
                     String nodeName = child.getName();
-                    if(nodeName.equals("name")){
+                    if (nodeName.equals("name")) {
                         //System.out.println(child.getStringValue());
                         String name = child.getStringValue();
                         book.setName(name);
-                    }else if(nodeName.equals("author")){
+                    } else if (nodeName.equals("author")) {
                         String author = child.getStringValue();
                         book.setAuthor(author);
-                    }else if(nodeName.equals("year")){
+                    } else if (nodeName.equals("year")) {
                         String year = child.getStringValue();
                         book.setYear(Integer.parseInt(year));
-                    }else if(nodeName.equals("price")){
+                    } else if (nodeName.equals("price")) {
                         String price = child.getStringValue();
                         book.setPrice(Double.parseDouble(price));
                     }
                 }
                 bookList.add(book);
-                book = null;
-
             }
         } catch (DocumentException e) {
-
             e.printStackTrace();
         }
-
-
         return bookList;
-
     }
-
-
     /**
      * @param args
      */
@@ -79,7 +71,7 @@ public class ReadXMLByDom4j {
         // TODO Auto-generated method stub
         File file = new File("E:\\book.xml");
         List<Book> bookList = new ReadXMLByDom4j().getBooks(file);
-        for(Book book : bookList){
+        for (Book book : bookList) {
             System.out.println(book);
         }
     }
