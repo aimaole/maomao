@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="Maven 1" modules="JSqlParsertest">
+    <profile name="Maven 1" modules="JSqlParsertest,JSqlParser-test,JSqlParser-test (1)">
       <parameters>
         <parameter value="-dependencyfile" />
         <parameter value="F:\maomaogit\sparktest\JSqlParser-test\target/.scala_dependencies" />

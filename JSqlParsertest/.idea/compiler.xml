@@ -6,17 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JSqlParser-test" />
-        <module name="JSqlParser-test (1)" />
         <module name="JSqlParsertest" />
-        <module name="spark-test" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="JSqlParser-test" target="1.5" />
-      <module name="JSqlParser-test (1)" target="1.5" />
-      <module name="JSqlParsertest" target="1.5" />
-      <module name="spark-test" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>
