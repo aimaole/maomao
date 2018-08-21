@@ -1,6 +1,6 @@
 package com.maomao.app
 
-import com.maomao.WordCount
+import com.maomao.sparkWork.WordCount
 import org.apache.hadoop.util.ProgramDriver
 
 class SparkAppDriver {
