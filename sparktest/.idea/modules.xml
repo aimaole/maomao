@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JSqlParser-test/JSqlParser-test.iml" filepath="$PROJECT_DIR$/JSqlParser-test/JSqlParser-test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/JSqlParser-test/JSqlParser-test (1).iml" filepath="$PROJECT_DIR$/JSqlParser-test/JSqlParser-test (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/spark-test.iml" filepath="$PROJECT_DIR$/spark-test.iml" />
     </modules>
   </component>
