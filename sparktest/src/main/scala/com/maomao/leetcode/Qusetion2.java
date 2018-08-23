@@ -1,4 +1,4 @@
-package com.maomao;
+package com.maomao.leetcode;
 
 public class Qusetion2 {
     public class ListNode {
