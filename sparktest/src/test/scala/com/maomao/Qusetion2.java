@@ -1,6 +1,6 @@
 package com.maomao;
 
-public class Test {
+public class Qusetion2 {
     public class ListNode {
         int val;
         ListNode next;

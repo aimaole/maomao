@@ -3,7 +3,7 @@ package com.maomao;
 import java.util.HashMap;
 import java.util.Map;
 
-public class JavaTest {
+public class Question1 {
     public static void main(String[] args) {
         int[] nums = {0, 1, 2, 3, 5, 6, 9, 8};
         int target = 8;
