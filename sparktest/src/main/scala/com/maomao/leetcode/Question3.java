@@ -6,6 +6,7 @@ import java.util.Set;
 public class Question3 {
     public static void main(String[] args) {
         String s = "qwertasdddasdfasf";
+        System.out.println(lengthOfLongestSubstring(s));
         System.out.println(lengthOfLongestSubstring1(s));
     }
 
