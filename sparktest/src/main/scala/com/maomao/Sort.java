@@ -6,6 +6,7 @@ public class Sort {
     }
 
     public static int[] quickSort(int[] arr){
+        return new int[] {};
 
     }
 }
