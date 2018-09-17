@@ -23,5 +23,9 @@ public class test {
         set.add(4);
         set.add(12);
 
+
+        System.out.println(""!=null);
+        System.out.println();
+
     }
 }

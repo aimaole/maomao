@@ -35,40 +35,18 @@ public class testxml {
                     if(attribute.getName().equals("id")){
                         String id = attribute.getValue();//System.out.println(id);
                         book.setId(Integer.parseInt(id));
-                    }
-                }
-
-                Iterator bookit = bookElement.elementIterator();
-                while(bookit.hasNext()){
-                    Element child = (Element) bookit.next();
-                    String nodeName = child.getName();
-                    if(nodeName.equals("name")){
-                        //System.out.println(child.getStringValue());
-                        String name = child.getStringValue();
+                    }if(attribute.getName().equals("name")){
+                        String name = attribute.getValue();//System.out.println(id);
                         book.setName(name);
-                    }else if(nodeName.equals("author")){
-                        String author = child.getStringValue();
-                        book.setAuthor(author);
-                    }else if(nodeName.equals("year")){
-                        String year = child.getStringValue();
-                        book.setYear(Integer.parseInt(year));
-                    }else if(nodeName.equals("price")){
-                        String price = child.getStringValue();
-                        book.setPrice(Double.parseDouble(price));
                     }
                 }
                 bookList.add(book);
                 book = null;
-
             }
         } catch (DocumentException e) {
-
             e.printStackTrace();
         }
-
-
         return bookList;
-
     }
 
 
@@ -77,7 +55,9 @@ public class testxml {
      */
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        File file = new File("E:\\books.xml");
+        File directory = new File("");//设定为当前文件夹
+        System.out.println(directory.getAbsolutePath());
+        File file = new File("F:\\maomaogit\\JSqlParsertest\\src\\main\\java\\com\\maomao\\books.xml");
         List<Book> bookList = new ReadXMLByDom4j().getBooks(file);
         for(Book book : bookList){
             System.out.println(book);
