@@ -1,4 +1,4 @@
-package test.com.xy6.demo.utils;
+package hadoop;
  
 import static org.junit.Assert.assertEquals;
  
@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
  
 import org.junit.Test;
- 
-import com.xy6.demo.utils.HdfsUtils;
  
 public class HdfsUtilsTest {
  
