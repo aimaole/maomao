@@ -1,4 +1,4 @@
-package com.maomao;
+package com.maomao.test;
 
 public class Sort {
     public static void main(String[] args) {

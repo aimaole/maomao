@@ -1,4 +1,4 @@
-package com.maomao.sparkWork
+package com.maomao.sparkWork.scala
 
 import org.apache.spark.{SparkConf, SparkContext}
 
