@@ -1,4 +1,4 @@
-package com.maomao;
+package com.maomao.test;
 
 public class QuickSort {
     public static void quickSort(int[] arr,int low,int high){

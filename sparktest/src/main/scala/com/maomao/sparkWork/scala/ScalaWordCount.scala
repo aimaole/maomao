@@ -1,4 +1,4 @@
-package com.maomao.sparkWork
+package com.maomao.sparkWork.scala
 
 object ScalaWordCount {
   def main(args: Array[String]) {
