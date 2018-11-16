@@ -8,5 +8,4 @@ class SparkAppDriver {
     val pgd = new ProgramDriver
     pgd.addClass("test",WordCount.getClass,"test WorldCount")
   }
-
 }
