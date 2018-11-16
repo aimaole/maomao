@@ -1,4 +1,4 @@
-package test;
+package hadoop;
 
 import java.io.StringReader;
 import java.util.List;
