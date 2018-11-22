@@ -9,7 +9,6 @@ public class HadoopAppDriver {
 		ProgramDriver pgd = new ProgramDriver();
 		try {
 			pgd.addClass("wordCount", WordCount.class, "wordCount");
-			pgd.addClass("test",Test.class , "多reduce测试类 ");
 			pgd.driver(args);
 			exitCode = 0;
 		} catch (Throwable e) {
