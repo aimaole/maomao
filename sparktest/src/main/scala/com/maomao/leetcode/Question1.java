@@ -40,7 +40,7 @@ public class Question1 {
         Map<Integer,Integer> map = new HashMap<>();
         for (int i = 0;i<nums.length;i++){
             int tmp = target-nums[i];
-            if (map.containsKey(tmp)&&map.get(tmp)!= i){
+            if (map.containsKey(tmp)){
                 return new int[]{i,map.get(tmp)};
             }
             map.put(nums[i],i);
