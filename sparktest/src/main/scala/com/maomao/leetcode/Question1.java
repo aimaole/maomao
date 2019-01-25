@@ -13,37 +13,14 @@ public class Question1 {
         }
     }
 
-    public static int[] twosum(int[] nums, int target) {
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                if (target == nums[i] + nums[j]) {
-                    return new int[]{i,j};
-                }
-            }
-        }
-        throw new IllegalArgumentException("无");
-    }
-    public static int[] twosum1(int[] nums, int target) {
-        Map<Integer,Integer> map = new HashMap<Integer,Integer>();
-        for (int i = 0;i<nums.length;i++){
-            map.put(nums[i],i);
-        }
-        for (int i =0;i<nums.length;i++){
-            int tmp = target-nums[i];
-            if (map.containsKey(tmp)&&map.get(tmp)!= i){
-                return new int[]{i,map.get(tmp)};
-            }
-        }
-        throw new IllegalArgumentException("No");
-    }
     public static int[] twosum2(int[] nums, int target) {
-        Map<Integer,Integer> map = new HashMap<>();
-        for (int i = 0;i<nums.length;i++){
-            int tmp = target-nums[i];
-            if (map.containsKey(tmp)){
-                return new int[]{i,map.get(tmp)};
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int tmp = target - nums[i];
+            if (map.containsKey(tmp)) {
+                return new int[]{i, map.get(tmp)};
             }
-            map.put(nums[i],i);
+            map.put(nums[i], i);
         }
         throw new IllegalArgumentException();
     }

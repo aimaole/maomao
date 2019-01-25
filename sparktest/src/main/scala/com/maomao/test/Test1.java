@@ -1,5 +1,8 @@
 package com.maomao.test;
 
+/**
+ * 找出连续最长小写
+ */
 public class Test1 {
     public static void main(String[] args) {
         String s = "AabBcdefg";

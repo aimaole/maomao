@@ -1,10 +1,12 @@
 package com.maomao.test;
 
+/**
+ * 测设类
+ */
 public class Test2 {
     public static void main(String[] args) {
-        char i = 'a';
-        System.out.println(i);
-        byte j = 'z';
-        System.out.println(j);
+        int i =1;
+        System.out.println(i++);
+        System.out.println(++i);
     }
 }
