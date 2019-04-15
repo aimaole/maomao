@@ -19,10 +19,10 @@ object SparkSQLExample {
       .master("local[4]")
       .getOrCreate()
 
-    //    runBasicDataFrameExample(spark)
-    //    runDatasetCreationExample(spark)
-    //    runInferSchemaExample(spark)
-    runProgrammaticSchemaExample(spark)
+//    runBasicDataFrameExample(spark)
+//    runDatasetCreationExample(spark)
+    runInferSchemaExample(spark)
+//    runProgrammaticSchemaExample(spark)
     spark.stop()
   }
 
@@ -66,6 +66,7 @@ object SparkSQLExample {
       .map(_.split(","))
       .map(p => Person(p(0), p(1).trim.toInt))
       .toDF()
+    peopleDF.show();
     peopleDF.createOrReplaceTempView("people")
 
     val result = spark.sql("select * from people where age between 13 and 19")
