@@ -5,11 +5,11 @@ public class TestMain {
         System.out.println(XYZ.name);
 
         // 不会初始化静态块
-        Class clazz1 = Base.class;
+        Class clazz1 = XYZ.class;
         System.out.println("------");
         // 会初始化
         try {
-            Class clazz2 = Class.forName("reflect.Base");
+            Class clazz2 = Class.forName("reflect.XYZ");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
