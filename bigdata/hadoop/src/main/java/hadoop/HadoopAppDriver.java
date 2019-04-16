@@ -12,7 +12,7 @@ public class HadoopAppDriver {
 			pgd.driver(args);
 			exitCode = 0;
 		} catch (Throwable e) {
-			// TODO Auto-generated catch block
+			// TODO Auto-generated catch blockl
 			e.printStackTrace();
 		}
 
