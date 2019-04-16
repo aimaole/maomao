@@ -6,7 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
-
+//https://blog.csdn.net/suifeng3051/article/details/48160753
 public class NewIO {
     /**
      * 用java NIO api拷贝文件
@@ -25,6 +25,7 @@ public class NewIO {
         ByteBuffer buffer=ByteBuffer.allocate(1024);
         while(true){
             //判断是否读完文件
+            //当没有更多的数据时，拷贝就算完成，此时 read() 方法会返回 -1 ，我们可以根据这个方法判断是否读完。
             int eof =inChannel.read(buffer);
             if(eof==-1){
                 break;
