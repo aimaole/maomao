@@ -13,6 +13,8 @@ public class TestMain {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+        String path = XYZ.class.getClassLoader().getResource("").getPath();
+        System.out.println(path);
     }
 }
 
