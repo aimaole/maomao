@@ -8,9 +8,10 @@ object WorldCountMM {
     val sc = new SparkContext(conf)
     sc.textFile("E://test.txt")
       .flatMap(_.split(" "))
-      .map((_,1))
+      .map((_, 1))
       .reduceByKey(_ + _)
-      .foreach(println)
+//      .foreach(println)
+      .saveAsTextFile("E://tessssssst")
     sc.stop()
   }
 }
