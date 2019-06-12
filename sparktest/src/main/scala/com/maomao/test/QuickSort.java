@@ -8,7 +8,7 @@ public class QuickSort {
         }
         i=low;
         j=high;
-        //temp就是基准位
+        //temp就是基准位  以temp进行切分，找到比大小之后互换
         temp = arr[low];
 
         while (i<j) {
@@ -28,18 +28,19 @@ public class QuickSort {
             }
 
         }
+        //i，j相等
         //最后将基准为与i和j相等位置的数字交换
         arr[low] = arr[i];
         arr[i] = temp;
-        //递归调用左半数组
+        //递归调用左半数组（不包含i）
         quickSort(arr, low, j-1);
-        //递归调用右半数组
+        //递归调用右半数组（不包含i）
         quickSort(arr, j+1, high);
     }
 
 
     public static void main(String[] args){
-        int[] arr = {52, 35, 82, 11, 52, 63, 85, 96, 74, 56, 55, 1, 69};
+        int[] arr = {3,1,2,4,5,9,8};
         quickSort(arr, 0, arr.length-1);
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
