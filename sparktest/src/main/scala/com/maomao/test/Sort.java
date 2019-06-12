@@ -52,8 +52,8 @@ public class Sort {
     }
 
     public static int[] maopaoSort(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length - i - 1; j++) {
+        for (int i = 0; i < arr.length-1; i++) {//外层循环控制排序趟数
+            for (int j = 0; j < arr.length - i - 1; j++) {//内层循环控制每一趟排序多少次
                 if (arr[j] > arr[j + 1]) {
                     int tmp = arr[j];
                     arr[j] = arr[j + 1];

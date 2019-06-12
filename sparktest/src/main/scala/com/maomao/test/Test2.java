@@ -5,8 +5,14 @@ package com.maomao.test;
  */
 public class Test2 {
     public static void main(String[] args) {
-        int i =1;
-        System.out.println(i++);
-        System.out.println(++i);
+        int[] arr = {3, 1, 2, 4, 5, 9, 8};
+        mergesort(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+    }
+
+    public static void mergesort(int[] arr) {
+
     }
 }
