@@ -27,6 +27,8 @@ public class TTT {
         al.forEach(TTT::printValur);
         Consumer f = System.out::println;
         al.forEach(f);
+
+        System.out.println(System.getProperty("user.dir"));
     }
 
 }

@@ -1,6 +1,5 @@
-package java;
+package jav;
 
-import java.util.Collections;
 import java.util.Comparator;
 
 public class ComparatorTest {
