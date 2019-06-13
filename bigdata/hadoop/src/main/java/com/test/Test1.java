@@ -1,4 +1,4 @@
-package main.java.com.test;
+package com.test;
 
 /**
  * 找出连续最长小写
