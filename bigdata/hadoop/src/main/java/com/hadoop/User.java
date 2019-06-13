@@ -1,4 +1,4 @@
-package hadoop;
+package com.hadoop;
 
 public class User {
 

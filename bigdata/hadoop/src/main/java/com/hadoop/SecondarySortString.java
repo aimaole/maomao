@@ -1,11 +1,11 @@
-package hadoop;
+package com.hadoop;
 
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
- 
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;
@@ -20,13 +20,13 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
- 
+
 public class SecondarySortString {
     // 自己定义的key类应该实现WritableComparable接口
-    public static class IntPair implements WritableComparable <IntPair> {
+    public static class IntPair implements WritableComparable<IntPair> {
         String first;
         String second;
- 
+
         /**
          * Set the left and right values.
          */
@@ -34,27 +34,27 @@ public class SecondarySortString {
             first = left;
             second = right;
         }
- 
+
         public String getFirst() {
             return first;
         }
- 
+
         public String getSecond() {
             return second;
         }
- 
+
         // 反序列化，从流中的二进制转换成IntPair
         public void readFields(DataInput in) throws IOException {
             first = in.readUTF();
             second = in.readUTF();
         }
- 
+
         // 序列化，将IntPair转化成使用流传送的二进制
         public void write(DataOutput out) throws IOException {
             out.writeUTF(first);
             out.writeUTF(second);
         }
- 
+
         // 重载 compareTo 方法，进行组合键 key 的比较，该过程是默认行为。
         // 分组后的二次排序会隐式调用该方法。
         public int compareTo(IntPair o) {
@@ -66,14 +66,14 @@ public class SecondarySortString {
                 return 0;
             }
         }
- 
+
         // 新定义类应该重写的两个方法
         // The hashCode() method is used by the HashPartitioner (the default
         // partitioner in MapReduce)
         public int hashCode() {
             return first.hashCode() * 157 + second.hashCode();
         }
- 
+
         public boolean equals(Object right) {
             if (right == null)
                 return false;
@@ -87,7 +87,7 @@ public class SecondarySortString {
             }
         }
     }
- 
+
     /**
      * 分区函数类。根据first确定Partition。
      */
@@ -96,7 +96,7 @@ public class SecondarySortString {
             return Math.abs(key.getFirst().hashCode() * 127) % numPartitions;
         }
     }
- 
+
     /**
      * 分组函数类。只要first相同就属于同一个组。
      */
@@ -115,6 +115,7 @@ public class SecondarySortString {
         protected GroupingComparator() {
             super(IntPair.class, true);
         }
+
         // Compare two WritableComparables.
         // 重载 compare：对组合键按第一个自然键排序分组
         public int compare(WritableComparable w1, WritableComparable w2) {
@@ -125,15 +126,16 @@ public class SecondarySortString {
             return l.compareTo(r);
         }
     }
- 
+
     // 自定义map
     public static class Map extends Mapper<LongWritable, Text, IntPair, Text> {
         private final IntPair keyPair = new IntPair();
         String[] lineArr = null;
+
         public void map(LongWritable key, Text value, Context context)
                 throws IOException, InterruptedException {
             String line = value.toString();
-            if(line.isEmpty()){
+            if (line.isEmpty()) {
                 return;
             }
             lineArr = line.split(" ", -1);
@@ -141,10 +143,11 @@ public class SecondarySortString {
             context.write(keyPair, value);
         }
     }
- 
+
     // 自定义reduce
     public static class Reduce extends Reducer<IntPair, Text, Text, Text> {
         private static final Text SEPARATOR = new Text("------------------------------------------------");
+
         public void reduce(IntPair key, Iterable<Text> values, Context context)
                 throws IOException, InterruptedException {
             context.write(SEPARATOR, null);
@@ -153,25 +156,25 @@ public class SecondarySortString {
             }
         }
     }
- 
+
     public static void main(String[] args) throws IOException,
             InterruptedException, ClassNotFoundException {
 //        File jarFile = EJob.createTempJar("bin");
 //        ClassLoader classLoader = EJob.getClassLoader();
 //        Thread.currentThread().setContextClassLoader(classLoader);
- 
+
         Configuration conf = new Configuration(true);
         String[] otherArgs = new String[2];
         otherArgs[0] = "hdfs://192.168.1.100:9000/data/test_in/secondary_sort_data_string.txt";
         String time = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         otherArgs[1] = "hdfs://192.168.1.100:9000/data/test_out/mr-" + time;
-         
+
         // 实例化一道作业
         Job job = new Job(conf, "secondarysort");
         job.setJarByClass(SecondarySort.class);
-         
+
 //        ((JobConf) job.getConfiguration()).setJar(jarFile.toString());
-         
+
         // Mapper类型
         job.setMapperClass(Map.class);
         // 不再需要Combiner类型，因为Combiner的输出类型<Text,
@@ -183,7 +186,7 @@ public class SecondarySortString {
         job.setPartitionerClass(FirstPartitioner.class);
         // 分组函数
         job.setGroupingComparatorClass(GroupingComparator.class);
- 
+
         // map 输出Key的类型
         job.setMapOutputKeyClass(IntPair.class);
         // map输出Value的类型
@@ -192,12 +195,12 @@ public class SecondarySortString {
         job.setOutputKeyClass(Text.class);
         // rduce输出Value的类型
         job.setOutputValueClass(Text.class);
- 
+
         // 将输入的数据集分割成小数据块splites，同时提供一个RecordReder的实现。
         job.setInputFormatClass(TextInputFormat.class);
         // 提供一个RecordWriter的实现，负责数据输出。
         job.setOutputFormatClass(TextOutputFormat.class);
- 
+
         // 输入hdfs路径
         FileInputFormat.setInputPaths(job, new Path(otherArgs[0]));
         // 输出hdfs路径
