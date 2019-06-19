@@ -1,4 +1,4 @@
-package com.maomao.sparkWork.scala
+package com.maomao.sparkwork
 
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkConf, SparkContext}

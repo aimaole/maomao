@@ -1,7 +1,6 @@
 package com.test;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.function.Consumer;
 
 public class TTT {
@@ -29,6 +28,20 @@ public class TTT {
         al.forEach(f);
 
         System.out.println(System.getProperty("user.dir"));
+
+        TreeMap<Integer,Integer> tree = new TreeMap<Integer,Integer>();
+        tree.firstEntry().getValue(); //最小值
+        tree.lastEntry().getValue(); //最大值
+        tree.navigableKeySet(); //从小到大的正序key集合
+        tree.descendingKeySet();//从大到小的倒序key集合
+        tree.remove(tree.firstKey());//删除键值最小的一对键值
+        Map<String ,String > map = new HashMap<>();
+        boolean b = map.containsKey("");
+        Map<String ,String > table = new Hashtable<>();
+        table.containsKey("");
+
+
+
     }
 
 }
