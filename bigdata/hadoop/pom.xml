@@ -35,12 +35,12 @@
             <version>2.7.2</version>
         </dependency>
 
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/com.github.jsqlparser/jsqlparser &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>com.github.jsqlparser</groupId>-->
-            <!--<artifactId>jsqlparser</artifactId>-->
-            <!--<version>1.2</version>-->
-        <!--</dependency>-->
+        <!-- https://mvnrepository.com/artifact/com.github.jsqlparser/jsqlparser -->
+        <dependency>
+            <groupId>com.github.jsqlparser</groupId>
+            <artifactId>jsqlparser</artifactId>
+            <version>1.2</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.hbase/hbase-client -->
         <dependency>
             <groupId>org.apache.hbase</groupId>
