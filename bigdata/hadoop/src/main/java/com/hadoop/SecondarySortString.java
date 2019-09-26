@@ -170,7 +170,7 @@ public class SecondarySortString {
         otherArgs[1] = "hdfs://192.168.1.100:9000/data/test_out/mr-" + time;
 
         // 实例化一道作业
-        Job job = new Job(conf, "secondarysort");
+        Job job = Job.getInstance(conf, "secondarysort");
         job.setJarByClass(SecondarySort.class);
 
 //        ((JobConf) job.getConfiguration()).setJar(jarFile.toString());

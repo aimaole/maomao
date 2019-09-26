@@ -12,6 +12,7 @@ public class TTT {
 
         System.out.println("----------------普通的写法-----------------------");
         List<String> al = Arrays.asList("a","b","c","d");
+        List<String> s = new ArrayList<>();
         for (String a: al) {
             TTT.printValur(a);
         }
@@ -29,16 +30,36 @@ public class TTT {
 
         System.out.println(System.getProperty("user.dir"));
 
-        TreeMap<Integer,Integer> tree = new TreeMap<Integer,Integer>();
-        tree.firstEntry().getValue(); //最小值
-        tree.lastEntry().getValue(); //最大值
-        tree.navigableKeySet(); //从小到大的正序key集合
-        tree.descendingKeySet();//从大到小的倒序key集合
-        tree.remove(tree.firstKey());//删除键值最小的一对键值
+//        TreeMap<Integer,Integer> tree = new TreeMap<Integer,Integer>();
+//        tree.firstEntry().getValue(); //最小值
+//        tree.lastEntry().getValue(); //最大值
+//        tree.navigableKeySet(); //从小到大的正序key集合
+//        tree.descendingKeySet();//从大到小的倒序key集合
+//        tree.remove(tree.firstKey());//删除键值最小的一对键值
         Map<String ,String > map = new HashMap<>();
-        boolean b = map.containsKey("");
-        Map<String ,String > table = new Hashtable<>();
+        Map<String ,String > table = new Hashtable<>(20);
         table.containsKey("");
+        byte i =127;
+        byte j =-128;
+        char a ='a';
+        System.out.println(Integer.valueOf(a));
+        Set<Integer> mm = new TreeSet<>();
+        mm.add(12);
+        mm.add(15);
+        mm.add(16);
+        mm.remove(Collections.max(mm));
+        for (Integer sasd:mm             ) {
+            System.out.println(sasd);
+        }
+        List<String>  sada = new ArrayList<>();
+        sada.add("a");
+        sada.add("b");
+        sada.add("c");
+        sada.add("d");
+        sada.set(1,"e");
+        for (String sasd:sada             ) {
+            System.out.println(sasd);
+        }
 
 
 
