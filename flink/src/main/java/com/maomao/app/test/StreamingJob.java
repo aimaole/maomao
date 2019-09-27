@@ -11,7 +11,7 @@ import org.apache.flink.streaming.api.functions.windowing.WindowFunction;
 import org.apache.flink.streaming.api.watermark.Watermark;
 import org.apache.flink.streaming.api.windowing.time.Time;
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
-import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer010;
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
 
 import javax.annotation.Nullable;
 import java.util.Properties;
@@ -37,12 +37,11 @@ public class StreamingJob {
 		env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
 
 		Properties props = new Properties();
-		props.setProperty("bootstrap.servers", "kafka1:9092");
+		props.setProperty("bootstrap.servers", "localhost:9092");
 		props.setProperty("group.id", "flink-group");
 
 		//数据源配置，是一个kafka消息的消费者
-		FlinkKafkaConsumer010<String> consumer =
-				new FlinkKafkaConsumer010<>("topic001", new SimpleStringSchema(), props);
+		FlinkKafkaConsumer<String> consumer =new FlinkKafkaConsumer<String>("topic001", new SimpleStringSchema(), props);
 		//增加时间水位设置类
 		consumer.assignTimestampsAndWatermarks(new AssignerWithPunctuatedWatermarks<String> (){
 			@Override
