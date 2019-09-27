@@ -19,7 +19,7 @@ object SparkOnHbase {
     scan.setStartRow(Bytes.toBytes("COHUTTA 3/10/14"))
     scan.setStopRow(Bytes.toBytes("COHUTTA 3/11/14"))
     val hBaseContext = new HBaseContext(sc, hconf)
-    val hbaseRDD = hBaseContext.hbaseRDD(TableName.valueOf("tablename"),scan)
+    val hbaseRDD = hBaseContext.hbaseRDD(TableName.valueOf("tablename"), scan)
     hbaseRDD.count()
     hbaseRDD.foreach { case (_, result) => {
       //获取行键
